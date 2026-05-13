@@ -939,6 +939,7 @@ Contributions of any kind are welcome! Special thanks to anyone who contributed 
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jose-elias-alvarez"><img src="https://avatars.githubusercontent.com/u/54108223?v=4?s=50" width="50px;" alt="Jose Alvarez"/><br /><sub><b>Jose Alvarez</b></sub></a><br /><a href="https://github.com/ndonfris/fish-lsp/commits?author=jose-elias-alvarez" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.bernat.tech/"><img src="https://avatars.githubusercontent.com/u/690238?v=4?s=50" width="50px;" alt="Bernát Gábor"/><br /><sub><b>Bernát Gábor</b></sub></a><br /><a href="https://github.com/ndonfris/fish-lsp/commits?author=gaborbernat" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/rmehri01"><img src="https://avatars.githubusercontent.com/u/52933714?v=4?s=50" width="50px;" alt="Ryan Mehri"/><br /><sub><b>Ryan Mehri</b></sub></a><br /><a href="https://github.com/ndonfris/fish-lsp/commits?author=rmehri01" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

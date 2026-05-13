@@ -1,3 +1,10 @@
+## <small>1.1.4-pre.1 (2026-05-13)</small>
+
+* chore: bump deps in `yarn.lock` & `package.json`  ([7bbbdb3](https://github.com/ndonfris/fish-lsp/commit/7bbbdb3))
+* chore: cleaning project structure + prep for bump `1.1.4-pre.1` ([7f0e7c9](https://github.com/ndonfris/fish-lsp/commit/7f0e7c9))
+* build: `chalk` removed from external dependencies in `yarn build:npm` ([7d9457b](https://github.com/ndonfris/fish-lsp/commit/7d9457b))
+* fix: `src/formatting.ts` changes for #159 ([fb8d966](https://github.com/ndonfris/fish-lsp/commit/fb8d966)), closes [#159](https://github.com/ndonfris/fish-lsp/issues/159) [#159](https://github.com/ndonfris/fish-lsp/issues/159) [#159](https://github.com/ndonfris/fish-lsp/issues/159)
+
 ## <small>1.1.4-pre.0 (2026-04-24)</small>
 
 * chore: bump deps for new nightly release `1.1.4-pre.0` ([89bcddf](https://github.com/ndonfris/fish-lsp/commit/89bcddf))
