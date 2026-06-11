@@ -1,5 +1,4 @@
 import * as LSP from 'vscode-languageserver';
-import { Hover, MarkupKind } from 'vscode-languageserver-protocol/node';
 import * as Parser from 'web-tree-sitter';
 import { Analyzer } from './analyze';
 import { LspDocument } from './document';
@@ -68,7 +67,7 @@ export async function handleHover(
   if (docsItem && docsItem.docs && !isVariableDocsMismatch && !isOptionValueDocsMismatch) {
     return {
       contents: {
-        kind: MarkupKind.Markdown,
+        kind: LSP.MarkupKind.Markdown,
         value: docsItem.docs.toString(),
       },
     };
@@ -95,7 +94,7 @@ export async function handleHover(
         if (section) {
           return {
             contents: {
-              kind: MarkupKind.Markdown,
+              kind: LSP.MarkupKind.Markdown,
               value: [
                 md.codeBlock('fish', `${parentCmdName} ${current.text}`),
                 md.separator(),
@@ -130,7 +129,7 @@ function getNestedHoverCommandAtPoint(
   };
 }
 
-export async function getHoverForFlag(current: Parser.SyntaxNode): Promise<Hover | null> {
+export async function getHoverForFlag(current: Parser.SyntaxNode): Promise<LSP.Hover | null> {
   const commandNode = findFirstParent(current, n => isCommand(n) || isFunctionDefinition(n));
   if (!commandNode) {
     return null;

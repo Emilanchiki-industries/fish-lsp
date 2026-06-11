@@ -1,4 +1,4 @@
-import { MarkupContent, MarkupKind } from 'vscode-languageserver-protocol/node';
+import { MarkupContent, MarkupKind } from 'vscode-languageserver';
 import { execCommandDocs, execCompleteLine } from './exec';
 import { md } from './markdown-builder';
 

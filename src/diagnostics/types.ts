@@ -1,7 +1,7 @@
 import { SyntaxNode } from 'web-tree-sitter';
-import { Diagnostic } from 'vscode-languageserver-protocol';
 import { ErrorCodes } from './error-codes';
 import { FishSymbol } from '../parsing/symbol';
+import { Diagnostic, Range } from 'vscode-languageserver';
 
 // Utilities related to building a documents Diagnostics.
 
@@ -10,7 +10,7 @@ import { FishSymbol } from '../parsing/symbol';
  */
 export interface FishDiagnostic extends Diagnostic {
   message: string;
-  range: any;
+  range: Range;
   data: {
     node: SyntaxNode;
     fromSymbol: boolean;

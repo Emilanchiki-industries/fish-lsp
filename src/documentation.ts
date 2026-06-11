@@ -1,6 +1,6 @@
 import { dirname } from 'path';
 import { SyntaxNode } from 'web-tree-sitter';
-import { Hover, MarkupContent, MarkupKind } from 'vscode-languageserver-protocol/node';
+import { Hover, MarkupContent, MarkupKind } from 'vscode-languageserver';
 import { execCommandDocs, execCommandType, execExpandBraceExpansion } from './utils/exec';
 import { md } from './utils/markdown-builder';
 import { Analyzer } from './analyze';
