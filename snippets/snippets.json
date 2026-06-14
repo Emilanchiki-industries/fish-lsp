@@ -1,21 +1,21 @@
 {
   "shebang": {
-    "prefix": "shebang",
+    "prefix": "#!",
     "description": "shebang",
     "body": "#!/usr/bin/env fish"
   },
   "shebang-with-arguments": {
-    "prefix": "shebang-with-arguments",
+    "prefix": ["#! ", "#!  "],
     "description": "shebang with arguments",
     "body": "#!/usr/bin/env ${1|-S,--split-string|} fish ${2|argument ...|}"
   },
   "and": {
-    "prefix": "and",
+    "prefix": ["and", "&&"],
     "description": "run the second command just if the first one succeded",
     "body": "${1:first-expression}${2|; and, &&|} ${3:second-expression}"
   },
   "or": {
-    "prefix": "or",
+    "prefix": ["or", "||"],
     "description": "run the second command just if the first one failed",
     "body": "${1:first-expression}${2|; or, \\|\\||} ${3:second-expression}"
   },
@@ -29,7 +29,7 @@
     ]
   },
   "if-else": {
-    "prefix": ["if-else", "ife"],
+    "prefix": ["if else", "ife"],
     "description": "check if the condition is true and run the first set of commands, and the second one oth[e]rwise",
     "body": [
       "if ${1:condition}",
@@ -40,7 +40,7 @@
     ]
   },
   "if-file-newer-than": {
-    "prefix": ["if-file-newer-than", "ifnt"],
+    "prefix": ["if file newer than", "ifnt"],
     "description": "check if the first file is [n]ewer [t]han the second one, or the first file exists and the second doesn't, and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-file}\" -nt \"${2:second-file}\"",
@@ -49,7 +49,7 @@
     ]
   },
   "if-file-older-than": {
-    "prefix": ["if-file-older-than", "ifot"],
+    "prefix": ["if file older than", "ifot"],
     "description": "check if the first file is [o]lder [t]han the second one, or the first file doesn't exist and the second does, and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-file}\" -ot \"${2:second-file}\"",
@@ -58,7 +58,7 @@
     ]
   },
   "if-file-equal-to": {
-    "prefix": ["if-file-equal-to", "ifef"],
+    "prefix": ["if file equal to", "ifef"],
     "description": "check if two [f]ile references are [e]qual (refer to the same file), and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-file}\" -ef \"${2:second-file}\"",
@@ -67,7 +67,7 @@
     ]
   },
   "if-less-than": {
-    "prefix": ["if-less-than", "iflt"],
+    "prefix": ["if less than", "iflt"],
     "description": "check if the first number is [l]ess [t]han the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-number}\" -lt \"${2:second-number}\"",
@@ -76,7 +76,7 @@
     ]
   },
   "if-greater-than": {
-    "prefix": ["if-greater-than", "ifgt"],
+    "prefix": ["if greater than", "ifgt"],
     "description": "check if the first number is [g]reater [t]han the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-number}\" -gt \"${2:second-number}\"",
@@ -85,7 +85,7 @@
     ]
   },
   "if-less-or-equal": {
-    "prefix": ["if-less-or-equal", "ifle"],
+    "prefix": ["if less or equal", "ifle"],
     "description": "check if the first number is [l]ess than or [e]qual to the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-number}\" -le \"${2:second-number}\"",
@@ -94,7 +94,7 @@
     ]
   },
   "if-greater-or-equal": {
-    "prefix": ["if-greater-or-equal", "ifge"],
+    "prefix": ["if greater or equal", "ifge"],
     "description": "check if the first number is [g]reater than or [e]qual to the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-number}\" -ge \"${2:second-number}\"",
@@ -103,7 +103,7 @@
     ]
   },
   "if-equal-to": {
-    "prefix": ["if-equal-to", "ifeq"],
+    "prefix": ["if equal to", "ifeq"],
     "description": "check if the first number is [eq]ual to the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-number}\" -eq \"${2:second-number}\"",
@@ -112,7 +112,7 @@
     ]
   },
   "if-not-equal-to": {
-    "prefix": ["if-not-equal-to", "ifne"],
+    "prefix": ["if not equal to", "ifne"],
     "description": "check if the first number is [n]ot [e]qual to the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-number}\" -ne \"${2:second-number}\"",
@@ -121,7 +121,7 @@
     ]
   },
   "if-string-equal-to": {
-    "prefix": ["if-string-equal-to", "ifseq"],
+    "prefix": ["if string equal to", "ifseq"],
     "description": "check if the first [s]tring is [eq]ual to the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-string}\" = \"${2:second-string}\"",
@@ -130,7 +130,7 @@
     ]
   },
   "if-string-not-equal-to": {
-    "prefix": ["if-string-not-equal-to", "ifsne"],
+    "prefix": ["if string not equal to", "ifsne"],
     "description": "check if the first [s]tring is [n]ot [e]qual to the second one and if true run the specified set of commands",
     "body": [
       "if test \"${1:first-string}\" != \"${2:second-string}\"",
@@ -139,7 +139,7 @@
     ]
   },
   "if-string-empty": {
-    "prefix": ["if-string-empty", "ifz"],
+    "prefix": ["if string empty", "ifz"],
     "description": "check if the string has [z]ero characters inside it (empty) and if true run the specified set of commands",
     "body": [
       "if test -z \"${1:string}\"",
@@ -148,7 +148,7 @@
     ]
   },
   "if-string-not-empty": {
-    "prefix": ["if-string-not-empty", "ifn"],
+    "prefix": ["if string not empty", "ifn"],
     "description": "check if the string is [n]ot empty and if true run the specified set of commands",
     "body": [
       "if test -n \"${1:string}\"",
@@ -157,7 +157,7 @@
     ]
   },
   "if-defined": {
-    "prefix": ["if-defined", "ifd"],
+    "prefix": ["if defined", "ifd"],
     "description": "check if the variable [d]efined and if true run the specified set of commands",
     "body": [
       "if set ${1|-q,--query|} \"${2:variable}\"",
@@ -166,7 +166,7 @@
     ]
   },
   "if-not-defined": {
-    "prefix": ["if-not-defined", "ifnd"],
+    "prefix": ["if not defined", "ifnd"],
     "description": "check if the variable [n]ot [d]efined and if true run the specified set of commands",
     "body": [
       "if not set ${1|-q,--query|} \"${2:variable}\"",
@@ -184,7 +184,7 @@
     ]
   },
   "while-file-newer-than": {
-    "prefix": ["while-file-newer-than", "whilent"],
+    "prefix": ["while file newer than", "whilent"],
     "description": "while the first file is [n]ewer [t]han the second one, or the first file exists and the second doesn't, run the specified set of commands",
     "body": [
       "while test \"${1:first-file}\" -nt \"${2:second-file}\"",
@@ -193,7 +193,7 @@
     ]
   },
   "while-file-older-than": {
-    "prefix": ["while-file-older-than", "whileot"],
+    "prefix": ["while file older than", "whileot"],
     "description": "while the first file is [o]lder [t]han the second one, or the first file doesn't exist and the second does, run the specified set of commands",
     "body": [
       "while test \"${1:first-file}\" -ot \"${2:second-file}\"",
@@ -202,7 +202,7 @@
     ]
   },
   "while-file-equal-to": {
-    "prefix": ["while-file-equal-to", "whileef"],
+    "prefix": ["while file equal to", "whileef"],
     "description": "while two [f]ile references are [e]qual (refer to the same file), run the specified set of commands",
     "body": [
       "while test \"${1:first-file}\" -ef \"${2:second-file}\"",
@@ -211,7 +211,7 @@
     ]
   },
   "while-less-than": {
-    "prefix": ["while-less-than", "whilelt"],
+    "prefix": ["while less than", "whilelt"],
     "description": "while the first number is [l]ess [t]han the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-number}\" -lt \"${2:second-number}\"",
@@ -220,7 +220,7 @@
     ]
   },
   "while-greater-than": {
-    "prefix": ["while-greater-than", "whilegt"],
+    "prefix": ["while greater than", "whilegt"],
     "description": "while the first number is [g]reater [t]han the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-number}\" -gt \"${2:second-number}\"",
@@ -229,7 +229,7 @@
     ]
   },
   "while-less-or-equal": {
-    "prefix": ["while-less-or-equal", "whilele"],
+    "prefix": ["while less or equal", "whilele"],
     "description": "while the first number is [l]ess than or [e]qual to the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-number}\" -le \"${2:second-number}\"",
@@ -238,7 +238,7 @@
     ]
   },
   "while-greater-or-equal": {
-    "prefix": ["while-greater-or-equal", "whilege"],
+    "prefix": ["while greater or equal", "whilege"],
     "description": "while the first number is [g]reater than or [e]qual to the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-number}\" -ge \"${2:second-number}\"",
@@ -247,7 +247,7 @@
     ]
   },
   "while-equal-to": {
-    "prefix": ["while-equal-to", "whileeq"],
+    "prefix": ["while equal to", "whileeq"],
     "description": "while the first number is [eq]ual to the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-number}\" -eq \"${2:second-number}\"",
@@ -256,7 +256,7 @@
     ]
   },
   "while-not-equal-to": {
-    "prefix": ["while-not-equal-to", "whilene"],
+    "prefix": ["while not equal to", "whilene"],
     "description": "while the first number is [n]ot [e]qual to the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-number}\" -ne \"${2:second-number}\"",
@@ -265,7 +265,7 @@
     ]
   },
   "while-string-equal-to": {
-    "prefix": ["while-string-equal-to", "whileseq"],
+    "prefix": ["while string equal to", "whileseq"],
     "description": "while the first [s]tring is [eq]ual to the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-string}\" = \"${2:second-string}\"",
@@ -274,7 +274,7 @@
     ]
   },
   "while-string-not-equal-to": {
-    "prefix": ["while-string-not-equal-to", "whilesne"],
+    "prefix": ["while string not equal to", "whilesne"],
     "description": "while the first [s]tring is [n]ot [e]qual to the second one run the specified set of commands",
     "body": [
       "while test \"${1:first-string}\" != \"${2:second-string}\"",
@@ -283,7 +283,7 @@
     ]
   },
   "while-string-empty": {
-    "prefix": ["while-string-empty", "whilez"],
+    "prefix": ["while string empty", "whilez"],
     "description": "while the string has [z]ero characters inside it (empty) run the specified set of commands",
     "body": [
       "while test -z \"${1:string}\"",
@@ -292,7 +292,7 @@
     ]
   },
   "while-string-not-empty": {
-    "prefix": ["while-string-not-empty", "whilen"],
+    "prefix": ["while string not empty", "whilen"],
     "description": "while the string is [n]ot empty run the specified set of commands",
     "body": [
       "while test -n \"${1:string}\"",
@@ -301,7 +301,7 @@
     ]
   },
   "while-defined": {
-    "prefix": ["while-defined", "whiled"],
+    "prefix": ["while defined", "whiled"],
     "description": "while the variable [d]efined run the specified set of commands",
     "body": [
       "while set ${1|-q,--query|} \"${2:variable}\"",
@@ -310,7 +310,7 @@
     ]
   },
   "while-not-defined": {
-    "prefix": ["while-not-defined", "whilend"],
+    "prefix": ["while not defined", "whilend"],
     "description": "while the variable [n]ot [d]efined run the specified set of commands",
     "body": [
       "while not set ${1|-q,--query|} \"${2:variable}\"",
@@ -328,7 +328,7 @@
     ]
   },
   "for-range": {
-    "prefix": ["for-range", "forr"],
+    "prefix": ["for range", "forr"],
     "description": "run the specified set of commands iterating over the number [r]ange",
     "body": [
       "for ${1:item} in $(seq ${2:from} ${3:to})",
@@ -337,7 +337,7 @@
     ]
   },
   "for-stepped-range": {
-    "prefix": ["for-stepped-range", "forsr"],
+    "prefix": ["for stepped range", "forsr"],
     "description": "run the specified set of commands iterating over the [s]tepped number [r]ange",
     "body": [
       "for ${1:item} in $(seq ${2:from} ${3:step} ${4:to})",
@@ -346,7 +346,7 @@
     ]
   },
   "for-files": {
-    "prefix": ["for-files", "forf"],
+    "prefix": ["for files", "forf"],
     "description": "run the specified set of commands iterating over [f]iles",
     "body": [
       "for ${1:item} in *.${2:extension}",
@@ -444,7 +444,7 @@
     ]
   },
   "function-described": {
-    "prefix": ["function-described", "fd"],
+    "prefix": ["function described", "fd"],
     "description": "define the [f]unction with the specified [d]escription",
     "body": [
       "function ${1:name} ${2|-d,--description|} ${3:explanation}",
@@ -453,7 +453,7 @@
     ]
   },
   "function-with-arguments": {
-    "prefix": ["function-with-arguments", "fa"],
+    "prefix": ["function with arguments", "fa"],
     "description": "define the [f]unction with the specified [a]rguments",
     "body": [
       "function ${1:name} ${2|-a,--argument-names|} ${3:argument ...}",
@@ -462,7 +462,7 @@
     ]
   },
   "function-described-with-arguments": {
-    "prefix": ["function-described-with-arguments", "fda"],
+    "prefix": ["function described with arguments", "fda"],
     "description": "define the [f]unction with the specified [d]escription and [a]rguments",
     "body": [
       "function ${1:name} ${2|-d,--description|} ${3:explanation} ${4|-a,--argument-names|} ${5:argument ...}",
@@ -480,7 +480,7 @@
     ]
   },
   "begin-redirected": {
-    "prefix": ["begin-redirected", "ber"],
+    "prefix": ["begin redirected", "ber"],
     "description": "group commands and redirect their output",
     "body": [
       "begin",
@@ -494,17 +494,17 @@
     "body": "set ${1:variable} ${2:value}"
   },
   "set-index": {
-    "prefix": ["set-index", "seti"],
+    "prefix": ["set index", "seti"],
     "description": "define or set a variable value with the specified [i]ndex",
     "body": "set ${1:variable}[${2:index}] ${3:value}"
   },
   "set-append": {
-    "prefix": ["set-append", "seta"],
+    "prefix": ["set append", "seta"],
     "description": "append the value to the specified variable",
     "body": "set ${1|-a,--append|} ${2:variable} ${3:value}"
   },
   "set-prepend": {
-    "prefix": ["set-prepend", "setp"],
+    "prefix": ["set prepend", "setp"],
     "description": "prepend the value to the specified variable",
     "body": "set ${1|-p,--prepend|} ${2:variable} ${3:value}"
   },
@@ -514,112 +514,112 @@
     "body": "string ${1|collect,escape,join,join0,length,lower,match,pad,repeat,replace,split,split0,sub,trim,unescape,upper|} -- ${2:argument ...}"
   },
   "string-match": {
-    "prefix": "string-match",
+    "prefix": "string match",
     "description": "string filtering",
     "body": "string match -- '${1:pattern}' ${2:argument ...}"
   },
   "string-match-all": {
-    "prefix": "string-match-all",
+    "prefix": "string match all",
     "description": "string filtering ([a]ll)",
     "body": "string match ${1|-a,--all|} -- '${2:pattern}' ${3:argument ...}"
   },
   "string-not-match": {
-    "prefix": "string-not-match",
+    "prefix": "string not match",
     "description": "string filtering (in[v]ert)",
     "body": "string match ${1|-v,--invert|} -- '${2:pattern}' ${3:argument ...}"
   },
   "string-regex-match": {
-    "prefix": "string-regex-match",
+    "prefix": "string regex match",
     "description": "string filtering with [r]egex",
     "body": "string match ${1|-r,--regex|} -- '${2:pattern}' ${3:argument ...}"
   },
   "string-regex-match-all": {
-    "prefix": "string-regex-match-all",
+    "prefix": "string regex match all",
     "description": "string filtering with [r]egex ([a]ll)",
     "body": "string match ${1|-a,--all|} ${2|-r,--regex|} -- '${3:pattern}' ${4:argument ...}"
   },
   "string-not-regex-match": {
-    "prefix": "string-not-regex-match",
+    "prefix": "string not regex match",
     "description": "string filtering with [r]egex (in[v]ert)",
     "body": "string match ${1|-v,--invert|} ${2|-r,--regex|} -- '${3:pattern}' ${4:argument ...}"
   },
   "string-replace": {
-    "prefix": "string-replace",
+    "prefix": "string replace",
     "description": "string replacement",
     "body": "string replace -- '${1:pattern}' '${2:replacement}' ${2:argument ...}"
   },
   "string-regex-replace": {
-    "prefix": "string-regex-replace",
+    "prefix": "string regex replace",
     "description": "string replacement with [r]egex",
     "body": "string replace ${1|-r,--regex|} -- '${2:pattern}' '${3:replacement}' ${4:argument ...}"
   },
   "string-regex-replace-all": {
-    "prefix": "string-regex-replace-all",
+    "prefix": "string regex replace all",
     "description": "string replacement with [r]egex ([a]ll)",
     "body": "string replace ${1|-a,--all|} ${2|-r,--regex|} -- '${3:pattern}' '${4:replacement}' ${5:argument ...}"
   },
   "file-newer-than": {
-    "prefix": ["file-newer-than", "nt"],
+    "prefix": ["file newer than", "nt"],
     "description": "test if the first file is [n]ewer [t]han the second one, or the first file exists and the second doesn't",
     "body": ["test \"${1:first-file}\" -nt \"${2:second-file}\""]
   },
   "file-older-than": {
-    "prefix": ["file-older-than", "ot"],
+    "prefix": ["file older than", "ot"],
     "description": "test if the first file is [o]lder [t]han the second one, or the first file doesn't exist and the second does",
     "body": ["test \"${1:first-file}\" -ot \"${2:second-file}\""]
   },
   "file-equal-to": {
-    "prefix": ["file-equal-to", "ef"],
+    "prefix": ["file equal to", "ef"],
     "description": "test if two [f]ile references are [e]qual (refer to the same file)",
     "body": ["test \"${1:first-file}\" -ef \"${2:second-file}\""]
   },
   "less-than": {
-    "prefix": ["less-than", "lt"],
+    "prefix": ["less than", "lt"],
     "description": "test if the first number is [l]ess [t]han the second one",
     "body": "test \"${1:first-number}\" -lt \"${2:second-number}\""
   },
   "greater-than": {
-    "prefix": ["greater-than", "gt"],
+    "prefix": ["greater than", "gt"],
     "description": "test if the first number is [g]reater [t]han the second one",
     "body": "test \"${1:first-number}\" -gt \"${2:second-number}\""
   },
   "less-or-equal": {
-    "prefix": ["less-or-equal", "le"],
+    "prefix": ["less or equal", "le"],
     "description": "test if the first number is [l]ess than or [e]qual to the second one",
     "body": "test \"${1:first-number}\" -le \"${2:second-number}\""
   },
   "greater-or-equal": {
-    "prefix": ["greater-or-equal", "ge"],
+    "prefix": ["greater or equal", "ge"],
     "description": "test if the first number is [g]reater than or [e]qual to the second one",
     "body": "test \"${1:first-number}\" -ge \"${2:second-number}\""
   },
   "equal-to": {
-    "prefix": ["equal-to", "eq"],
+    "prefix": ["equal to", "eq"],
     "description": "test if the first number is [eq]ual to the second one",
     "body": "test \"${1:first-number}\" -eq \"${2:second-number}\""
   },
   "not-equal-to": {
-    "prefix": ["not-equal-to", "ne"],
+    "prefix": ["not equal to", "ne"],
     "description": "test if the first number is [n]ot [e]qual to the second one",
     "body": "test \"${1:first-number}\" -ne \"${2:second-number}\""
   },
   "string-equal-to": {
-    "prefix": ["string-equal-to", "seq"],
+    "prefix": ["string equal to", "seq"],
     "description": "test if the first [s]tring is [eq]ual to the second one",
     "body": "test \"${1:first-string}\" = \"${2:second-string}\""
   },
   "string-not-equal-to": {
-    "prefix": ["string-not-equal-to", "sne"],
+    "prefix": ["string not equal to", "sne"],
     "description": "test if the first [s]tring is [n]ot [e]qual to the second one",
     "body": "test \"${1:first-string}\" != \"${2:second-string}\""
   },
   "string-empty": {
-    "prefix": ["string-empty", "z"],
+    "prefix": ["string empty", "z"],
     "description": "test if the string has [z]ero characters inside it (empty)",
     "body": "test -z \"${1:string}\""
   },
   "string-not-empty": {
-    "prefix": ["string-not-empty", "n"],
+    "prefix": ["string not empty", "n"],
     "description": "test if the string is [n]ot empty",
     "body": "test -n \"${1:string}\""
   },
@@ -629,7 +629,7 @@
     "body": "set ${1|-q,--query|} \"${2:variable}\""
   },
   "not-defined": {
-    "prefix": ["not-defined", "nd"],
+    "prefix": ["not defined", "nd"],
     "description": "test if the variable [n]ot [d]efined",
     "body": "not set ${1|-q,--query|} \"${2:variable}\""
   },
@@ -650,7 +650,7 @@
     ]
   },
   "parse-with-functions": {
-    "prefix": ["parse-with-functions", "parsef"],
+    "prefix": ["parse with functions", "parsef"],
     "description": "parse options with h/help and v/version included via [f]unctions and detailed program or function explanation",
     "body": [
       "function help",
@@ -689,42 +689,42 @@
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-d,--description|} '${6:explanation}'"
   },
   "complete-required": {
-    "prefix": "complete-required",
+    "prefix": "complete required",
     "description": "complete option with [r]equired value",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-r,--require-parameter|} ${6|-d,--description|} '${7:explanation}'"
   },
   "complete-with-arguments": {
-    "prefix": "complete-with-arguments",
+    "prefix": "complete with arguments",
     "description": "complete option with [a]rguments",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-a,--arguments|} '${6:list}' ${7|-d,--description|} '${8:explanation}'"
   },
   "complete-required-with-arguments": {
-    "prefix": "complete-required-with-arguments",
+    "prefix": "complete required with arguments",
     "description": "complete option with [r]equired value and [a]rguments",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-a,--arguments|} '${6:list}' ${7|-r,--require-parameter|} ${8|-d,--description|} '${9:explanation}'"
   },
   "complete-if": {
-    "prefix": "complete-if",
+    "prefix": "complete if",
     "description": "complete option if",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-n,--condition|} '${6:expression}' ${7|-d,--description|} '${8:explanation}'"
   },
   "complete-required-if": {
-    "prefix": "complete-required-if",
+    "prefix": "complete required if",
     "description": "complete option with [r]equired value if",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-r,--require-parameter|} ${6|-n,--condition|} '${7:expression}' ${8|-d,--description|} '${9:explanation}'"
   },
   "complete-with-arguments-if": {
-    "prefix": "complete-with-arguments-if",
+    "prefix": "complete with arguments if",
     "description": "complete option with [a]rguments if",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-a,--arguments|} '${6:list}' ${7|-n,--condition|} '${8:expression}' ${9|-d,--description|} '${10:explanation}'"
   },
   "complete-required-with-arguments-if": {
-    "prefix": "complete-required-with-arguments-if",
+    "prefix": "complete required with arguments if",
     "description": "complete option with [r]equired value and [a]rguments if",
     "body": "complete ${1|-c,--command|} ${2:executable} ${3|-s,-l,-o,--short-option,--long-option,--old-option|} ${4:option} ${5|-a,--arguments|} '${6:list}' ${7|-r,--require-parameter|} ${8|-n,--condition|} '${9:expression}' ${10|-d,--description|} '${11:explanation}'"
   },
   "complete-help": {
-    "prefix": "complete-help",
+    "prefix": "complete help",
     "description": "complete -h/--help and -v/--version",
     "body": [
       "complete ${1|-c,--command|} ${2:executable} ${3|-s,--short-option|} h ${4|-l,-o,--long-option,--old-option|} help ${5|-d,--description|} 'Show help'",
@@ -732,47 +732,47 @@
     ]
   },
   "skip-first": {
-    "prefix": ["skip-first", "skf"],
+    "prefix": ["skip first", "skf"],
     "description": "[sk]ip the first li[n]es or [b]ytes",
     "body": "tail ${1|-n,-c,--lines,--bytes|} +${2:count}"
   },
   "skip-last": {
-    "prefix": ["skip-last", "skl"],
+    "prefix": ["skip last", "skl"],
     "description": "[sk]ip the last li[n]es or [b]ytes",
     "body": "head ${1|-n,-c,--lines,--bytes|} -${2:count}"
   },
   "take-first": {
-    "prefix": ["take-first", "taf"],
+    "prefix": ["take first", "taf"],
     "description": "[ta]ke the first li[n]es or [b]ytes",
     "body": "head ${1|-n,-c,--lines,--bytes|} ${2:count}"
   },
   "take-last": {
-    "prefix": ["take-last", "tal"],
+    "prefix": ["take last", "tal"],
     "description": "[ta]ke the last li[n]es or [b]ytes",
     "body": "tail ${1|-n,-c,--lines,--bytes|} ${2:count}"
   },
   "take-range": {
-    "prefix": ["take-range", "tar"],
+    "prefix": ["take range", "tar"],
     "description": "[ta]ke the specified line range",
     "body": "sed ${1|-n,--quiet|} '${2:from},${3:to}p'"
   },
   "take-stepped-range": {
-    "prefix": ["take-stepped-range", "tasr"],
+    "prefix": ["take stepped range", "tasr"],
     "description": "[ta]ke each n-th line in the specified range",
     "body": "sed ${1|-n,--quiet|} '${2:from},${3:to}p' | sed $1 '1~${4:step}p'"
   },
   "set-color": {
-    "prefix": ["set-color", "color"],
+    "prefix": ["set color", "color"],
     "description": "color the following text",
     "body": "(set_color ${1|black,red,green,yellow,blue,magenta,cyan,white,brblack,brred,brgreen,bryellow,brblue,brmagenta,brcyan,brwhite|})"
   },
   "set-background-color": {
-    "prefix": ["set-background-color", "bgcolor"],
+    "prefix": ["set background color", "bgcolor"],
     "description": "color the following text [b]ack[g]round",
     "body": "(set_color ${1|-b,--background|} ${2|black,red,green,yellow,blue,magenta,cyan,white,brblack,brred,brgreen,bryellow,brblue,brmagenta,brcyan,brwhite|})"
   },
   "reset-color": {
-    "prefix": ["reset-color", "recolor"],
+    "prefix": ["reset color", "recolor"],
     "description": "reset the following text color to its default",
     "body": "(set_color normal)"
   },
